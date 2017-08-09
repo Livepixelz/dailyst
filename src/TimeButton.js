@@ -21,7 +21,7 @@ export default class TimeButton extends React.Component {
     }
     render() {
         return (
-            <button onClick={this.handleClick} className={ 'btn btn-daytime btn-' + this.props.timeofday } data-timeofday={this.props.timeofday}>{this.props.text}</button>
+            <button onClick={this.handleClick} className={ 'btn btn-daytime btn--' + this.props.timeofday } data-timeofday={this.props.timeofday}>{this.props.text}</button>
         )
     }
 }
