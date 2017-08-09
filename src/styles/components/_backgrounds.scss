@@ -1,0 +1,65 @@
+/** BACKGROUNDS **/
+
+body.morning,
+.morning .glitch:after,
+.morning .glitch:before {
+  background-color: $daytime-morning-bgc1;
+}
+body.afternoon,
+.afternoon .glitch:after,
+.afternoon .glitch:before {
+  background-color: $daytime-afternoon-bgc1;
+}
+body.evening,
+.evening .glitch:after,
+.evening .glitch:before {
+  background-color: $daytime-evening-bgc1;
+}
+body.night,
+.night .glitch:after {
+  background-color: $daytime-night-bgc1;
+}
+.body_background {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity .9s ease-in-out;
+  z-index: -1;
+}
+.body_background.active {
+  opacity: 1;
+  visibility: visible;
+}
+.body--morning {
+  background-image: linear-gradient(
+    to top,
+    $daytime-morning-bgc1 0%,
+    $daytime-morning-bgc1 100%
+  );
+}
+.body--afternoon {
+  background-image: linear-gradient(
+    to top,
+    $daytime-afternoon-bgc1 0%,
+    $daytime-afternoon-bgc2 60%,
+    $daytime-afternoon-bgc3 100%
+  );
+}
+.body--evening {
+  background-image: linear-gradient(
+    to top,
+    $daytime-evening-bgc1 0%,
+    $daytime-evening-bgc2 100%
+  );
+}
+.body--night {
+  background-image: linear-gradient(
+    to top,
+    $daytime-night-bgc1 0%,
+    $daytime-night-bgc2 100%
+  );
+}

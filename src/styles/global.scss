@@ -1,0 +1,21 @@
+// VARIABLES
+@import 'styles/base/_variables.scss';
+
+// BASE
+@import 'styles/base/_fonts.scss';
+@import 'styles/base/_base.scss';
+
+// LAYOUT
+@import 'styles/layout/_header.scss';
+@import 'styles/layout/_layout.scss';
+@import 'styles/layout/_footer.scss';
+
+// COMPONENTS
+@import 'styles/components/_backgrounds.scss';
+@import 'styles/components/_buttons.scss';
+@import 'styles/components/_cards.scss';
+@import 'styles/components/_tracklist.scss';
+
+// ANIMATIONS
+@import 'styles/animations/_animations.scss';
+@import 'styles/animations/_effects.scss';

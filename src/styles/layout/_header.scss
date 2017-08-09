@@ -1,0 +1,27 @@
+/** HEADER **/
+
+#logo,
+#tape {
+  display: block;
+  margin: 0 auto;
+  backface-visibility: hidden;
+}
+#logo {
+  height: 15vh;
+  display: block;
+  margin-top: 30px;
+  min-height: 100px;
+}
+#tape {
+  height: 25vh;
+  display: block;
+  min-height: 200px;
+  margin-bottom: 30px;
+}
+#blueprint_-_copie {
+  animation: float 6s ease-in-out infinite;
+}
+#Calque_1 {
+  animation: shadowscale 6s ease-in-out infinite;
+  transform-origin: center;
+}

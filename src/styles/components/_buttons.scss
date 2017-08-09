@@ -1,0 +1,50 @@
+/** BUTTONS **/
+
+.btn {
+  font-family: 'Montserrat', Arial, sans-serif;
+  -webkit-appearance: none;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
+  transition: 0.2s all ease-in-out;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, .2);
+  margin: 0 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2),
+      inset 0px 1px 0px 0px rgba(255, 255, 255, .2);
+  }
+  &:focus {
+    box-shadow: inset 1px 1px 0px rgba(0, 0, 0, .2),
+      inset 0px 1px 0px 0px rgba(255, 255, 255, .2);
+  }
+
+  &--morning {
+    background-color: $daytime-morning-bgc1;
+  }
+
+  &--afternoon {
+    background-color: $daytime-afternoon-bgc1;
+  }
+
+  &--evening {
+    background-color: $daytime-evening-bgc1;
+  }
+
+  &--night {
+    background-color: $daytime-night-bgc1;
+  }
+}

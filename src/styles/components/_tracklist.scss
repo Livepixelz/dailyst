@@ -1,0 +1,36 @@
+/** TRACKLIST **/
+
+.trackList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.trackList.owl-carousel {
+  display: block;
+}
+.trackList.display--row .card {
+  flex-direction: row;
+  flex-basis: calc(100%);
+  justify-content: baseline;
+}
+.trackList.display--column .card {
+  flex-direction: column;
+  flex-basis: calc(50% - 10px);
+  justify-content: center;
+}
+
+.trackList .owl-theme .owl-nav [class*=owl-],
+.trackList .owl-theme .owl-dots .owl-dot span {
+  background-color: rgba(255, 255, 255, .2);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .1),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, .1);
+}
+.trackList .owl-theme .owl-nav [class*=owl-]:hover,
+.trackList .owl-theme .owl-dots .owl-dot:hover span,
+.trackList .owl-theme .owl-dots .owl-dot.active span {
+  background-color: rgba(255, 255, 255, .4);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .1),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, .1);
+}
