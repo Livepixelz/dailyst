@@ -1,9 +1,9 @@
 import React from 'react';
 // import OwlCarousel from 'react-owl-carousel2';
 import moment from 'moment';
-import LastCard from './LastCard.js';
-import TimeButton from './TimeButton.js';
-import DisplayButton from './DisplayButton.js';
+import LastCard from './components/LastCard.js';
+import TimeButton from './components/TimeButton.js';
+import DisplayButton from './components/DisplayButton.js';
 
 class App extends React.Component {
 

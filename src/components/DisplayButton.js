@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import $ from 'jquery';
 
-export default class DisplayButton extends React.Component {
+class DisplayButton extends Component {
 
     constructor(props) {
         super(props);
@@ -23,3 +23,5 @@ export default class DisplayButton extends React.Component {
         )
     }
 }
+
+export default DisplayButton;

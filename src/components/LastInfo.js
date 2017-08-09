@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class LastInfo extends React.Component {
+class LastInfo extends Component {
     render() {
 
         return (
@@ -12,3 +12,5 @@ export default class LastInfo extends React.Component {
         )
     }
 }
+
+export default LastInfo;

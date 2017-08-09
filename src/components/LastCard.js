@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LastInfo from './LastInfo.js';
 import LastCover from './LastCover.js';
 
-export default class LastCard extends React.Component {
+class LastCard extends Component {
     render() {
         return (
             <div className='card'>
@@ -12,3 +12,5 @@ export default class LastCard extends React.Component {
         )
     }
 }
+
+export default LastCard;

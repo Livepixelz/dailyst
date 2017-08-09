@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class LastCover extends React.Component {
+class LastCover extends Component {
     render() {
         return (
             <div className='cover' style={ {backgroundImage: 'url(' + this.props.cover + ')' }}></div>
         )
     }
 }
+
+export default LastCover;

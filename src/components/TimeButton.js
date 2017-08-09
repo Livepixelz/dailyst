@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import $ from 'jquery';
 
-export default class TimeButton extends React.Component {
+class TimeButton extends Component {
 
     constructor(props) {
         super(props);
@@ -25,3 +25,5 @@ export default class TimeButton extends React.Component {
         )
     }
 }
+
+export default TimeButton;
