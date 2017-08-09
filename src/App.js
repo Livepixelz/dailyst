@@ -1,5 +1,9 @@
 import React from 'react';
+// import OwlCarousel from 'react-owl-carousel2';
+import moment from 'moment';
 import LastCard from './LastCard.js';
+import TimeButton from './TimeButton.js';
+import DisplayButton from './DisplayButton.js';
 
 class App extends React.Component {
 
@@ -79,10 +83,32 @@ class App extends React.Component {
     render() {
         console.log("render");
         let lfm = this;
+        // const options = {
+        //     loop:true,
+        //     center:true,
+        //     margin:10,
+        //     responsiveClass:true,
+        //     responsive:{
+        //         0:{
+        //             items:1,
+        //             nav:true
+        //         },
+        //         600:{
+        //             items:3,
+        //             nav:true
+        //         },
+        //         1000:{
+        //             items:6,
+        //             nav:true,
+        //         }
+        //     }
+        // };
         if(this.state.data.length > 0){
             var TrackNodes = this.state.data.map(function (track, i) {
+                let trackDate = new Date(track.date.uts * 1000);
+                console.log(moment(trackDate).format('LT'));
                 while(i < lfm.props.tracks) {
-                    var date = track.date ? lfm.timeSince(parseInt(track.date.uts) * 1000 ) : 'Now Playing';
+                    var date = track.date ? lfm.timeSince(parseInt(track.date.uts, 10) * 1000 ) : 'Now Playing';
                     return (
                         <LastCard artist={track.artist['#text']}
                                   title={track.name}
@@ -94,7 +120,23 @@ class App extends React.Component {
             });
         }
 
-        return <div>{TrackNodes}</div>;
+        return <div>
+                    <nav className="menu">
+                    <TimeButton timeofday="morning" text="Morning" />
+                    <TimeButton timeofday="afternoon" text="Afternoon" />
+                    <TimeButton timeofday="evening" text="Evening" />
+                    <TimeButton timeofday="night" text="Night" />
+                    </nav>
+                    <div className="menu--display">
+                        <DisplayButton displaytype="row" text="List"></DisplayButton>
+                        <DisplayButton displaytype="column" text="Mosaic"></DisplayButton>
+                    </div>
+                    <section className="trackList owl-carousel owl-theme">
+                    {/* <OwlCarousel className="owl-theme" options={options}> */}
+                    {TrackNodes}
+                    {/* </OwlCarousel> */}
+                    </section>
+                </div>;
     }
 }
 export default App;
