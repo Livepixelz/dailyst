@@ -136,7 +136,7 @@ body.night,
 
 /** CARDS **/
 .card {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-basis: calc(50% - 10px);

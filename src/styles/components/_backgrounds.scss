@@ -3,7 +3,7 @@
 body.morning,
 .morning .glitch:after,
 .morning .glitch:before {
-  background-color: $daytime-morning-bgc1;
+  background-color: $daytime-morning-bgc2;
 }
 body.afternoon,
 .afternoon .glitch:after,
@@ -27,8 +27,11 @@ body.night,
   bottom: 0;
   left: 0;
   right: 0;
-  transition: opacity .9s ease-in-out;
+  transition: all .9s ease-in-out;
   z-index: -1;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
 }
 .body_background.active {
   opacity: 1;
@@ -38,7 +41,7 @@ body.night,
   background-image: linear-gradient(
     to top,
     $daytime-morning-bgc1 0%,
-    $daytime-morning-bgc1 100%
+    $daytime-morning-bgc2 100%
   );
 }
 .body--afternoon {
