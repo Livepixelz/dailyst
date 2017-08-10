@@ -20,3 +20,52 @@
     box-shadow: $top $left $blur $color;
   }
 }
+
+@mixin tablet() {
+  @media only screen and (min-width: 970px) and (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media only screen and (min-width: 970px) {
+    @content;
+  }
+}
+
+@mixin large-desktop() {
+  @media only screen and (min-width: 1100px) {
+    @content;
+  }
+}
+
+/**
+ * A Long-shadow mixin, guaranteed to make your Dribbble shots 11% cooler
+ * @param  string  $color_a  The darkest colour (closest the object)
+ * @param  string  $color_b  The lightest colour (often the background colour)
+ * @param  int     $stepnum  Number of steps
+ * @param  int     $opacity  The opacity of the blend
+ * @return list         	   Returns a list ready to drop into 'box-shadow' or text-shadow
+ */
+@function longshadow($color_a,$color_b,$stepnum, $opacity: 1) {
+  $gradient_steps: null;
+
+  @for $i from 1 through $stepnum {
+    $weight: ( ($i - 1) / $stepnum) * 100;
+
+    $colour_mix: mix($color_b, rgba($color_a, $opacity), $weight);
+
+    $seperator: null;
+
+    @if ($i != $stepnum) {
+      $seperator: #{','};
+    }
+
+    $gradient_steps: append(
+      #{$gradient_steps},
+      #{$i}px #{$i}px $colour_mix $seperator
+    );
+  }
+
+  @return $gradient_steps;
+}
