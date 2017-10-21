@@ -1,23 +1,28 @@
 /** BACKGROUNDS **/
 
-body.morning,
-.morning .glitch:after,
-.morning .glitch:before {
-  background-color: $daytime-morning-bgc2;
+.morning {
+  & .glitch:after,
+  & .glitch:before {
+    background-color: $daytime-morning-bgc2;
+  }
 }
-body.afternoon,
-.afternoon .glitch:after,
-.afternoon .glitch:before {
-  background-color: $daytime-afternoon-bgc1;
+.afternoon {
+  & .glitch:after,
+  & .glitch:before {
+    background-color: $daytime-afternoon-bgc1;
+  }
 }
-body.evening,
-.evening .glitch:after,
-.evening .glitch:before {
-  background-color: $daytime-evening-bgc1;
+.evening {
+  & .glitch:after,
+  & .glitch:before {
+    background-color: $daytime-evening-bgc1;
+  }
 }
-body.night,
-.night .glitch:after {
-  background-color: $daytime-night-bgc1;
+.night {
+  & .glitch:after,
+  & .glitch:before {
+    background-color: $daytime-night-bgc1;
+  }
 }
 .body_background {
   opacity: 0;
@@ -32,37 +37,149 @@ body.night,
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @at-root &--morning {
+    background-image: linear-gradient(
+      to top,
+      $daytime-morning-bgc1 0%,
+      $daytime-morning-bgc2 100%
+    );
+  }
+  @at-root &--afternoon {
+    background-image: linear-gradient(
+      to top,
+      $daytime-afternoon-bgc1 0%,
+      $daytime-afternoon-bgc2 60%,
+      $daytime-afternoon-bgc3 100%
+    );
+  }
+  @at-root &--evening {
+    background-image: linear-gradient(
+      to top,
+      $daytime-evening-bgc1 0%,
+      $daytime-evening-bgc2 100%
+    );
+  }
+  @at-root &--night {
+    background-image: linear-gradient(
+      to top,
+      $daytime-night-bgc1 0%,
+      $daytime-night-bgc2 100%
+    );
+  }
 }
-.body_background.active {
-  opacity: 1;
-  visibility: visible;
+.card,
+.card:before,
+.card:after,
+.card__artist,
+.card__title,
+.card__cover,
+.card__cover:before {
+  transition: all 500ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-.body--morning {
-  background-image: linear-gradient(
-    to top,
-    $daytime-morning-bgc1 0%,
-    $daytime-morning-bgc2 100%
-  );
+
+.morning {
+  .card__artist {
+    color: $daytime-morning-bgc1;
+  }
+
+  .card__content:before {
+   color: $daytime-morning-bgc2; 
+  }
+
+  .card__title {
+    text-shadow: 0 3px 0px $daytime-morning-bgc1, 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+  .card__cover:before {
+    background-color: $daytime-morning-bgc2;
+    mix-blend-mode: color;
+    opacity: .5;
+  }
+  .btn {
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $daytime-morning-bgc1;
+    }
+  }
 }
-.body--afternoon {
-  background-image: linear-gradient(
-    to top,
-    $daytime-afternoon-bgc1 0%,
-    $daytime-afternoon-bgc2 60%,
-    $daytime-afternoon-bgc3 100%
-  );
+
+.afternoon {
+  .card__artist {
+    color: $daytime-afternoon-bgc3;
+  }
+  .card__content:before {
+    color:$daytime-afternoon-bgc1;
+  }
+
+  .card__title {
+    text-shadow: 0 3px 0px $daytime-afternoon-bgc1, 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+  .card__cover:before {
+    background-color: $daytime-afternoon-bgc2;
+    mix-blend-mode: color;
+    opacity: .5;
+  }
+  .btn {
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $daytime-afternoon-bgc1;
+    }
+  }
 }
-.body--evening {
-  background-image: linear-gradient(
-    to top,
-    $daytime-evening-bgc1 0%,
-    $daytime-evening-bgc2 100%
-  );
+
+.evening {
+  .card__artist {
+    color: $daytime-evening-bgc1;
+  }
+  .card__content:before {
+    color: $daytime-evening-bgc2;
+  }
+
+  .card__title {
+    text-shadow: 0 3px 0px $daytime-evening-bgc1, 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+  .card__cover:before {
+    background-color: $daytime-evening-bgc2;
+    mix-blend-mode: color;
+    opacity: .5;
+  }
+  .btn {
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $daytime-evening-bgc1;
+    }
+  }
 }
-.body--night {
-  background-image: linear-gradient(
-    to top,
-    $daytime-night-bgc1 0%,
-    $daytime-night-bgc2 100%
-  );
+
+.night {
+  .card__artist {
+    color: $daytime-night-bgc1;
+  }
+  .card__content:before {
+    color: $daytime-night-bgc2;
+  }
+
+  .card__title {
+    text-shadow: 0 3px 0px $daytime-night-bgc1, 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+  .card__cover:before {
+    background-color: $daytime-night-bgc2;
+    mix-blend-mode: color;
+    opacity: .5;
+  }
+  .btn {
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $daytime-night-bgc1;
+    }
+  }
 }

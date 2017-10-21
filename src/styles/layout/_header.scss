@@ -1,22 +1,26 @@
 /** HEADER **/
 
 #logo,
-#tape {
+.tape {
   display: block;
   margin: 0 auto;
   backface-visibility: hidden;
+  mix-blend-mode: hard-light;
 }
 #logo {
   height: 15vh;
-  display: block;
+  display: none;
   margin-top: 30px;
   min-height: 100px;
 }
-#tape {
-  height: 25vh;
+.tape {
   display: block;
-  min-height: 200px;
   margin-bottom: 30px;
+}
+h1 {
+  font-size: 46px;
+  margin: 30px 0 20px;
+  font-family: 'RapScript';
 }
 #blueprint_-_copie {
   animation: float 6s ease-in-out infinite;

@@ -13,9 +13,10 @@ class TimeButton extends Component {
     e.preventDefault();
     let $button = $(e.currentTarget);
     let timeOfDay = $button.data('timeofday');
+    $button.toggleClass('active').siblings().removeClass('active');
     $('.body_background').removeClass('active');
     $('body').attr('class', '');
-    $('.body--' + timeOfDay).addClass('active');
+    $('.body_background--' + timeOfDay).addClass('active');
     $('body').addClass(timeOfDay);
   }
   render() {

@@ -7,7 +7,7 @@ ReactDOM.render(
   <App
     apiKey={'3750fc3b89c9ff609a6180bcc6ba8669'}
     username={'okend'}
-    tracks={30}
+    tracks={100}
   />,
   document.getElementById('react')
 );

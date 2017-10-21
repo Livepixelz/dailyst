@@ -4,54 +4,138 @@
   background: rgba(255, 255, 255, 0.1);
   font-family: 'Montserrat', sans-serif;
   display: flex;
-  flex-basis: calc(50% - 10px);
+  flex-basis: calc(50% - 20px);
   justify-content: center;
   flex-direction: column;
-  box-shadow: inset -1px -1px 0px rgba(0, 0, 0, .1),
-    0px 1px 0px rgba(0, 0, 0, .1), inset 1px 1px 0px rgba(255, 255, 255, .2);
+  
   transition: 0.5s all ease;
-  border-radius: 5px;
-  overflow: hidden;
+  position: relative;
   margin: 0 0 20px;
-}
-.card:hover {
-  cursor: pointer;
-  box-shadow: inset -1px -1px 0px rgba(0, 0, 0, .1),
-    0px 1px 4px rgba(0, 0, 0, .1), inset 1px 1px 0px rgba(255, 255, 255, .2);
-}
-.card:active {
-  transform: translate3d(0px, 1px, 2px);
-}
-.cover {
-  width: 100%;
-  height: 240px;
-  background-size: cover;
-}
-.content {
-  margin-top: 5px;
-  text-align: left;
-  padding: 5px 10px 10px;
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, .1);
-}
-.title {
-  font-size: 18px;
-  line-height: 100%;
-  display: block;
-  font-weight: 500;
-  color: #fff;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 175px;
-}
-.artist {
-  font-size: 14px;
-  color: #333;
-  font-weight: 200;
-}
-.date {
-  display: block;
-  font-size: 12px;
-  color: $card-date-color;
-  font-weight: normal;
+
+  counter-increment: chart;
+
+  &:before,&:after {
+    position: absolute;
+    bottom:-10px;
+    right:-10px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  &:before {
+    width:10px;
+    height: 1px;
+    bottom: -11px;
+    right: -16px;
+  }
+  &:after {
+    width:1px;
+    height: 10px;
+    right: -12px;
+    bottom: -16px;
+  }
+
+  .card__cover-wrapper {
+    overflow: hidden;
+  }
+  
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: inset -1px -1px 0px rgba(0, 0, 0, .1),
+      0px 1px 4px rgba(0, 0, 0, .1), inset 1px 1px 0px rgba(255, 255, 255, .2);
+
+    .card__cover {
+      transform: scale(1);
+      &:before {
+        opacity: 0;
+      }
+    }
+    &:before {
+      width:16px;
+      right: -19px;
+    }
+    &:after {
+      height: 16px;
+      bottom: -19px;
+    }
+  }
+  &:active {
+    transform: translate3d(0px, 1px, 2px);
+  }
+
+  @at-root &__cover {
+    width: 100%;
+    height: 240px;
+    background-size: cover;
+    background-color: #332f38;
+    transform: scale(1.3);
+    position: relative;
+
+      &:before {
+        content:'';
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background-color: rgba(95, 50, 153, 0.5);
+        mix-blend-mode: difference;
+      }
+  }
+  @at-root &__content {
+    margin-top: 5px;
+    text-align: left;
+    padding: 10px 15px 15px;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 1px rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+
+    &:before {
+      content: counter(chart);
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      z-index: 0;
+      border-radius: 2px;
+      color: black;
+      line-height: 24px;
+      text-align: center;
+      font-size: 11px;
+      font-family: 'RapScript';
+    }
+  }
+  @at-root &__title {
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'RapScript';
+    text-shadow:0 2px 0px #000;
+    letter-spacing: -1px;
+    font-size: 21px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+  @at-root &__artist {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0px 1Px 0 rgba(255, 255, 255, 0.25);
+    position: relative;
+  }
+  @at-root &__date {
+    display: block;
+    font-size: 12px;
+    color: $card-date-color;
+    font-weight: normal;
+  }
 }

@@ -1,10 +1,181 @@
 /** LAYOUT **/
 
 .menu {
-  margin: 10px 0;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 0px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .1),
-    inset 0px 1px 0px 0px rgba(255, 255, 255, .1);
+  display: flex;
+  border-bottom:1px solid rgba(255, 255, 255, 0.05);
+
+
+  .btn {
+  	flex:1;
+  	
+  // 	&:first-child{
+		// border-top-left-radius: 3px;
+		// border-bottom-left-radius: 3px;
+  // 	}
+  // 	&:last-child{
+		// border-top-right-radius: 3px;
+		// border-bottom-right-radius: 3px;
+  // 	}
+  }
+
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 320px auto;
+  grid-template-rows: 48px auto 100px;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+main {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 3;
+  position: relative;
+}
+footer {
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 1;
+}
+
+
+.loading__wrapper {
+  display: none;
+  position: fixed;
+      top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+}
+
+@media screen and (max-width: 2000px) {
+  .trackList.display--row .card {
+    flex-direction: row;
+    flex-basis: calc(100%);
+    justify-content: baseline;
+
+
+  }
+  .trackList.display--column .card {
+    flex-direction: column;
+    flex-basis: calc(20% - 20px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .trackList.display--row .card {
+    flex-direction: row;
+    flex-basis: calc(100%);
+    justify-content: baseline;
+
+
+  }
+  .trackList.display--column .card {
+    flex-direction: column;
+    flex-basis: calc(25% - 20px);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .trackList.display--row .card {
+    flex-direction: row;
+    flex-basis: calc(100%);
+    justify-content: baseline;
+
+
+  }
+  .trackList.display--column .card {
+    flex-direction: column;
+    flex-basis: calc(33.3333% - 14px);
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 320px auto;
+    grid-template-rows: 200px auto 100px;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  main {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 3;
+  }
+  footer {
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 3;
+}
+
+  .tape {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    padding: 16px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 200px auto 100px;
+    width: 100vw;
+    height: 100vh;
+  }
+  .trackList.display--column .card {
+    flex-direction: column;
+    flex-basis: calc(50% - 14px);
+  }
+
+  .btn {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .trackList.display--column .card {
+    flex-direction: column;
+    flex-basis: calc(100%);
+  }
+
+  .btn {
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}
+
+
+
+

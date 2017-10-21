@@ -1,9 +1,9 @@
 import React from 'react';
 // import OwlCarousel from 'react-owl-carousel2';
-import moment from 'moment';
+//import moment from 'moment';
 import LastCard from './components/LastCard.js';
 import TimeButton from './components/TimeButton.js';
-import DisplayButton from './components/DisplayButton.js';
+//import DisplayButton from './components/DisplayButton.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,22 +12,61 @@ class App extends React.Component {
     let _username = this.props.username,
       _apiKey = this.props.apiKey;
 
-    this.url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${_username}&api_key=${_apiKey}&format=json`;
+    this.url = `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${_username}&api_key=${_apiKey}&format=json`;
 
-    this.state = { data: [] };
+    this.state = { data: [], hour: 0 };
   }
 
   componentDidMount() {
     console.log('cdm');
     let localLast = this;
 
+    let date = new Date();
+    let hourOfDay = date.getHours();
+
     fetch(this.url)
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
-        localLast.setState({ data: data.recenttracks.track });
-        console.log(data);
+        localLast.setState({ data: data.toptracks.track, hour: hourOfDay });
+        switch (localLast.state.hour) {
+          case 8:
+          case 9:
+          case 10:
+          case 11:
+            document.querySelector('.btn--morning').click();
+            break;
+          case 12:
+          case 13:
+          case 14:
+          case 15:
+          case 16:
+          case 17:
+            document.querySelector('.btn--afternoon').click();
+            break;
+          case 18:
+          case 19:
+          case 20:
+            document.querySelector('.btn--evening').click();
+            break;
+          case 21:
+          case 22:
+          case 23:
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+          case 6:
+          case 7:
+            document.querySelector('.btn--night').click();
+            break;
+          default:
+            document.querySelector('.btn--night').click();
+            break;
+        }
       })
       .catch(function(err) {
         console.log(err);
@@ -102,18 +141,12 @@ class App extends React.Component {
     // };
     if (this.state.data.length > 0) {
       var TrackNodes = this.state.data.map(function(track, i) {
-        let trackDate = new Date(track.date.uts * 1000);
-        console.log(moment(trackDate).format('LT'));
         while (i < lfm.props.tracks) {
-          var date = track.date
-            ? lfm.timeSince(parseInt(track.date.uts, 10) * 1000)
-            : 'Now Playing';
           return (
             <LastCard
               artist={track.artist['#text']}
               title={track.name}
               cover={track.image[3]['#text']}
-              date={date}
               key={i}
             />
           );
@@ -121,6 +154,12 @@ class App extends React.Component {
       });
     }
 
+    /*
+    <div className="menu--display">
+          <DisplayButton displaytype="row" text="List" />
+          <DisplayButton displaytype="column" text="Mosaic" />
+        </div>
+    */
     return (
       <div>
         <nav className="menu">
@@ -129,11 +168,8 @@ class App extends React.Component {
           <TimeButton timeofday="evening" text="Evening" />
           <TimeButton timeofday="night" text="Night" />
         </nav>
-        <div className="menu--display">
-          <DisplayButton displaytype="row" text="List" />
-          <DisplayButton displaytype="column" text="Mosaic" />
-        </div>
-        <section className="trackList owl-carousel owl-theme">
+
+        <section className="trackList display--column">
           {/* <OwlCarousel className="owl-theme" options={options}> */}
           {TrackNodes}
           {/* </OwlCarousel> */}
