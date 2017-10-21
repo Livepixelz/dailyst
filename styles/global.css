@@ -599,8 +599,7 @@ main {
   grid-row-start: 1;
   grid-column-start: 2;
   grid-row-end: 3;
-  grid-column-end: 3;
-  position: relative; }
+  grid-column-end: 3; }
 
 footer {
   grid-row-start: 3;
@@ -646,7 +645,7 @@ footer {
 
 @media screen and (max-width: 970px) {
   body {
-    border-top: 20px solid white; }
+    border-top: 10px solid white; }
   .wrapper {
     display: grid;
     grid-template-columns: 320px auto;
