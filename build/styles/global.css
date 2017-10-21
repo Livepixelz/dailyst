@@ -203,8 +203,6 @@ h1 {
   flex-basis: calc(50% - 20px);
   justify-content: center;
   flex-direction: column;
-  border-radius: 3px;
-  overflow: hidden;
   transition: 0.5s all ease;
   position: relative;
   margin: 0 0 20px;
@@ -358,11 +356,11 @@ h1 {
     transform: scale(1); } }
 
 .rotating {
-  -webkit-animation: rotating .2s linear infinite;
-  -moz-animation: rotating .2s linear infinite;
-  -ms-animation: rotating .2s linear infinite;
-  -o-animation: rotating .2s linear infinite;
-  animation: rotating .2s linear infinite;
+  -webkit-animation: rotating 4s linear infinite;
+  -moz-animation: rotating 4s linear infinite;
+  -ms-animation: rotating 4s linear infinite;
+  -o-animation: rotating 4s linear infinite;
+  animation: rotating 4s linear infinite;
   transform-origin: center; }
 
 @-webkit-keyframes rotating {
@@ -476,34 +474,6 @@ h1 {
     clip: rect(121px, 9999px, 51px, 0); }
   100% {
     clip: rect(120px, 9999px, 98px, 0); } }
-
-.loading {
-  -webkit-animation: loading 10s linear infinite;
-  -moz-animation: loading 10s linear infinite;
-  -ms-animation: loading 10s linear infinite;
-  -o-animation: loading 10s linear infinite;
-  animation: loading 10s linear infinite;
-  transform-origin: center; }
-
-@-webkit-keyframes loading {
-  0% {
-    -webkit-transform: scaleX(0);
-    -o-transform: scaleX(0);
-    transform: scaleX(0);
-    transform-origin: center left; }
-  49.9% {
-    transform-origin: center left; }
-  50% {
-    -webkit-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    transform: scaleX(1); }
-  50.1% {
-    transform-origin: center right; }
-  100% {
-    -webkit-transform: scaleX(0);
-    -o-transform: scaleX(0);
-    transform: scaleX(0);
-    transform-origin: center right; } }
 
 /** EFFECTS **/
 .scanlines {
@@ -638,34 +608,13 @@ footer {
   grid-column-end: 1; }
 
 .loading__wrapper {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .loading__wrapper .loading__text {
-    color: #fff;
-    font-size: 40px;
-    font-weight: 800;
-    margin: 10px 0;
-    display: inline-block;
-    position: relative; }
-    .loading__wrapper .loading__text:before {
-      content: '';
-      display: block;
-      left: -15px;
-      right: -15px;
-      bottom: 0;
-      top: 0;
-      /* height: 100%; */
-      background-color: #212121;
-      position: absolute;
-      z-index: -1;
-      animation: loading 2s cubic-bezier(0.86, 0, 0.07, 1) infinite; }
+  background: #fff; }
 
 @media screen and (max-width: 2000px) {
   .trackList.display--row .card {
