@@ -35,6 +35,10 @@ header {
   grid-row-end: 3;
 }
 
+.tape {
+  max-width: 100%;
+}
+
 main {
   grid-row-start: 1;
   grid-column-start: 2;

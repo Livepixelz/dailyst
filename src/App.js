@@ -144,7 +144,7 @@ class App extends React.Component {
         while (i < lfm.props.tracks) {
           return (
             <LastCard
-              artist={track.artist['#text']}
+              artist={track.artist.name}
               title={track.name}
               cover={track.image[3]['#text']}
               key={i}
