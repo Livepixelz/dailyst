@@ -595,9 +595,6 @@ header {
 .tape {
   max-width: 100%; }
 
-.btn {
-  transform: skew(-10deg); }
-
 main {
   grid-row-start: 1;
   grid-column-start: 2;
@@ -648,6 +645,8 @@ footer {
     flex-basis: calc(33.3333% - 14px); } }
 
 @media screen and (max-width: 970px) {
+  body {
+    border-top: 20px solid white; }
   .wrapper {
     display: grid;
     grid-template-columns: 320px auto;
