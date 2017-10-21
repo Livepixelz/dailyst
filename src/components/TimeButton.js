@@ -13,9 +13,17 @@ class TimeButton extends Component {
     e.preventDefault();
     let $button = $(e.currentTarget);
     let timeOfDay = $button.data('timeofday');
+    let colors = {
+      morning: '#37ecba',
+      afternoon: '#4facfe',
+      evening: '#fee140',
+      night: '#d43f8d'
+    };
     $button.toggleClass('active').siblings().removeClass('active');
+
     $('.body_background').removeClass('active');
     $('body').attr('class', '');
+    $('meta[name=theme-color]').attr('content', colors[timeOfDay]);
     $('.body_background--' + timeOfDay).addClass('active');
     $('body').addClass(timeOfDay);
   }
