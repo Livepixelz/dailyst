@@ -64,6 +64,17 @@ footer {
     background: #fff;
 }
 
+.trackList.display--row .card {
+    flex-direction: row;
+    flex-basis: calc(100%);
+    justify-content: baseline;
+}
+
+.trackList.display--column .card {
+  flex-direction: column;
+  flex-basis: calc(16.6666% - 20px);
+}
+
 @media screen and (max-width: 2000px) {
   .trackList.display--row .card {
     flex-direction: row;
