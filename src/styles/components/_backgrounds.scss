@@ -120,7 +120,11 @@ h1 {
 .morning {
 
   h1 {
-    text-shadow: 0 4px 0px $daytime-morning-bgc1, 0 0 5px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 -1px 0px $daytime-morning-bgc1, 
+                1px -1px 0px $daytime-morning-bgc1, 
+                2px -2px 0px $daytime-morning-bgc1, 
+                3px -2px 0px $daytime-morning-bgc1,
+                4px -3px 0px $daytime-morning-bgc1;
   }
   .card__artist {
     color: $daytime-morning-bgc1;
@@ -148,7 +152,11 @@ h1 {
 
 .afternoon {
   h1 {
-    text-shadow: 0 4px 0px $daytime-afternoon-bgc1, 0 0 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 0px $daytime-afternoon-bgc1, 
+                1px 2px 0px $daytime-afternoon-bgc1, 
+                1px 3px 0px $daytime-afternoon-bgc1, 
+                2px 4px 0px $daytime-afternoon-bgc1,
+                2px 5px 0px $daytime-afternoon-bgc1;
   }
   .card__artist {
     color: $daytime-afternoon-bgc3;
@@ -175,7 +183,11 @@ h1 {
 
 .evening {
   h1 {
-    text-shadow: 0 4px 0px $daytime-evening-bgc1, 0 0 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 0px $daytime-evening-bgc1, 
+                -1px 2px 0px $daytime-evening-bgc1, 
+                -1px 3px 0px $daytime-evening-bgc1, 
+                -2px 4px 0px $daytime-evening-bgc1,
+                -2px 5px 0px $daytime-evening-bgc1;
   }
   .card__artist {
     color: $daytime-evening-bgc1;
@@ -202,7 +214,11 @@ h1 {
 
 .night {
   h1 {
-    text-shadow: 0 4px 0px $daytime-night-bgc1, 0 0 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 -1px 0px $daytime-night-bgc1, 
+                -1px -1px 0px $daytime-night-bgc1, 
+                -2px -2px 0px $daytime-night-bgc1, 
+                -3px -2px 0px $daytime-night-bgc1,
+                -4px -3px 0px $daytime-night-bgc1;
   }
   .card__artist {
     color: $daytime-night-bgc1;

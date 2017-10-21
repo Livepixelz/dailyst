@@ -39,6 +39,10 @@ header {
   max-width: 100%;
 }
 
+.btn {
+  transform: skew(-10deg);
+}
+
 main {
   grid-row-start: 1;
   grid-column-start: 2;
@@ -122,6 +126,10 @@ footer {
     grid-row-end: 2;
   }
 
+  .menu {
+    background: rgba(255,255,255,.1);
+  }
+
   main {
     grid-row-start: 2;
     grid-column-start: 1;
@@ -156,11 +164,15 @@ footer {
   }
   .trackList.display--column .card {
     flex-direction: column;
-    flex-basis: calc(50% - 14px);
+    flex-basis: calc(50% - 10px);
   }
 
   .btn {
     padding: 16px;
+  }
+
+  .card__title {
+    font-size: 27px;
   }
 }
 
