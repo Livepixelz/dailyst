@@ -12,7 +12,7 @@ class App extends React.Component {
     let _username = this.props.username,
       _apiKey = this.props.apiKey;
 
-    this.url = `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${_username}&api_key=${_apiKey}&format=json`;
+    this.url = `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${_username}&api_key=${_apiKey}&format=json`;
 
     this.state = { data: [], hour: 0 };
   }
