@@ -59,7 +59,7 @@ main {
   .body_background--morning {
     background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%); }
   .body_background--afternoon {
-    background-image: linear-gradient(to top, #4facfe 0%, #00f2fe 60%, #fbffe6 100%); }
+    background-image: linear-gradient(to top, #4facfe 0%, #00f2fe 60%, #1cf7c5 100%); }
   .body_background--evening {
     background-image: linear-gradient(to top, #fee140 0%, #fa709a 100%); }
   .body_background--night {
@@ -122,7 +122,7 @@ h1 {
   text-shadow: 0 1px 0px #4facfe, 1px 2px 0px #4facfe, 1px 3px 0px #4facfe, 2px 4px 0px #4facfe, 2px 5px 0px #4facfe; }
 
 .afternoon .card__artist {
-  color: #fbffe6; }
+  color: #1cf7c5; }
 
 .afternoon .card__content:before {
   color: #4facfe; }
@@ -674,7 +674,8 @@ main {
   grid-row-start: 1;
   grid-column-start: 2;
   grid-row-end: 3;
-  grid-column-end: 3; }
+  grid-column-end: 3;
+  position: relative; }
 
 footer {
   grid-row-start: 3;
