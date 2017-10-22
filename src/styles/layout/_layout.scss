@@ -56,15 +56,33 @@ footer {
 .loading__wrapper {
   position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #383838;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .8s cubic-bezier(1, 0.01, 0, 0.99);
+
+  &.loaded, &.loaded:before {
+    transform:translateX(100%);
+  }
+
+  &:before {
+    content:'';
+    position: absolute;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #fff;
+    transition: all .8s cubic-bezier(1, 0.01, 0, 0.99);
+    z-index:-1;
+    transition-delay: .3s;
+  }
 
-    .loading__text {
+  .loading__text {
     color: #fff;
     font-size: 40px;
     font-weight: 800;
@@ -72,21 +90,20 @@ footer {
     display: inline-block;
     position: relative;
     
-      &:before {
-       content: '';
-    display: block;
-    left: -15px;
-    right: -15px;
-    bottom: 0;
-    top:0;
-    /* height: 100%; */
-    background-color: #212121;
-    position: absolute;
-    z-index: -1;
-        animation: loading 2s cubic-bezier(0.860, 0.000, 0.070, 1.000) infinite;
-
-      }
+    &:before {
+      content: '';
+      display: block;
+      left: -15px;
+      right: -15px;
+      bottom: 0;
+      top:0;
+      /* height: 100%; */
+      background-color: #383838;
+      position: absolute;
+      z-index: -1;
+      animation: loading 2s cubic-bezier(1, 0.01, 0, 0.99) infinite;
     }
+  }
 }
 
 .trackList.display--row .card {

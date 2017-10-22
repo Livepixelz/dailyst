@@ -4,6 +4,7 @@ import React from 'react';
 import LastCard from './components/LastCard.js';
 import TimeButton from './components/TimeButton.js';
 //import DisplayButton from './components/DisplayButton.js';
+import imagesLoaded from 'imagesloaded';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,6 +31,9 @@ class App extends React.Component {
       })
       .then(function(data) {
         localLast.setState({ data: data.toptracks.track, hour: hourOfDay });
+        imagesLoaded('.card__cover', { background: true }, function() {
+          document.querySelector('.loading__wrapper').classList.add('loaded');
+        });
         switch (localLast.state.hour) {
           case 8:
           case 9:

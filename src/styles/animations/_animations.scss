@@ -37,11 +37,11 @@
 }
 
 .rotating {
-  -webkit-animation: rotating .2s linear infinite;
-  -moz-animation: rotating .2s linear infinite;
-  -ms-animation: rotating .2s linear infinite;
-  -o-animation: rotating .2s linear infinite;
-  animation: rotating .2s linear infinite;
+  -webkit-animation: rotating 4s linear infinite;
+  -moz-animation: rotating 4s linear infinite;
+  -ms-animation: rotating 4s linear infinite;
+  -o-animation: rotating 4s linear infinite;
+  animation: rotating 4s linear infinite;
   transform-origin: center;
 }
 
@@ -240,3 +240,62 @@
     transform-origin:center right;
   }
 }
+
+.enterLeft {
+  -webkit-animation: enterLeft 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -moz-animation: enterLeft 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -ms-animation: enterLeft 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-animation: enterLeft 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  animation: enterLeft 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transform-origin: center;
+}
+
+@-webkit-keyframes enterLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    transform-origin:center bottom;
+  }
+  
+  50% {
+    -webkit-transform: translateX(calc(-60vw - 170px));
+    -o-transform: translateX(calc(-60vw - 170px));
+    transform: translateX(calc(-60vw - 170px));
+  }
+  100% {
+   -webkit-transform: translateX(2vw);
+    -o-transform: translateX(2vw);
+    transform: translateX(2vw);
+  }
+}
+
+.exitRight {
+  -webkit-animation: exitRight 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -moz-animation: exitRight 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -ms-animation: exitRight 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-animation: exitRight 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  animation: exitRight 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transform-origin: center;
+}
+
+@-webkit-keyframes exitRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    transform-origin:center bottom;
+  }
+  
+  50% {
+   -webkit-transform: translateX(-2vw);
+    -o-transform: translateX(-2vw);
+    transform: translateX(-2vw);
+  }
+  100% {
+    -webkit-transform: translateX(calc(60vw + 170px));
+    -o-transform: translateX(calc(60vw + 170px));
+    transform: translateX(calc(60vw + 170px));
+  }
+}
+
