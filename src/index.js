@@ -11,4 +11,5 @@ ReactDOM.render(
   />,
   document.getElementById('react')
 );
+
 registerServiceWorker();

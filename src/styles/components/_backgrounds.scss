@@ -1,9 +1,17 @@
 /** BACKGROUNDS **/
 
+.card__cover {
+  &:hover {
+    filter: none;
+  }
+}
 .morning {
   & .glitch:after,
   & .glitch:before {
     background-color: $daytime-morning-bgc2;
+  }
+  .card__cover {
+    filter: url('#duotone_morning');
   }
 }
 .afternoon {
@@ -11,17 +19,26 @@
   & .glitch:before {
     background-color: $daytime-afternoon-bgc1;
   }
+  .card__cover {
+    filter: url('#duotone_afternoon');
+  }
 }
 .evening {
   & .glitch:after,
   & .glitch:before {
     background-color: $daytime-evening-bgc1;
   }
+  .card__cover {
+    filter: url('#duotone_evening');
+  }
 }
 .night {
   & .glitch:after,
   & .glitch:before {
     background-color: $daytime-night-bgc1;
+  }
+  .card__cover {
+    filter: url('#duotone_night');
   }
 }
 .body_background {
@@ -105,10 +122,6 @@ h1 {
   .card__title,.btn {
     text-shadow: 0 2px 0px $daytime-morning-bgc1, 0 0 1px rgba(0, 0, 0, 0.5);
   }
-  .card__cover:before {
-    background-color: $daytime-morning-bgc2;
-    opacity: .5;
-  }
   .btn {
     &:hover,
     &:focus,
@@ -137,10 +150,6 @@ h1 {
   .card__title,.btn {
     text-shadow: 0 2px 0px $daytime-morning-bgc1, 0 0 1px rgba(0, 0, 0, 0.5);
   }
-  .card__cover:before {
-    background-color: darken($daytime-morning-bgc1,40%);
-    opacity: .5;
-  }
   .btn {
     &:hover,
     &:focus,
@@ -167,10 +176,6 @@ h1 {
 
   .card__title,.btn {
     text-shadow: 0 2px 0px $daytime-afternoon-bgc1, 0 0 1px rgba(0, 0, 0, 0.5);
-  }
-  .card__cover:before {
-    background-color: darken($daytime-afternoon-bgc1,40%);
-    opacity: .5;
   }
   .btn {
     &:hover,
@@ -199,10 +204,7 @@ h1 {
   .card__title,.btn {
     text-shadow: 0 2px 0px $daytime-evening-bgc1, 0 0 1px rgba(0, 0, 0, 0.5);
   }
-  .card__cover:before {
-    background-color: darken($daytime-evening-bgc2,60%);
-    opacity: .5;
-  }
+
   .btn {
     &:hover,
     &:focus,
@@ -230,10 +232,7 @@ h1 {
   .card__title,.btn {
     text-shadow: 0 2px 0px $daytime-night-bgc1, 0 0 1px rgba(0, 0, 0, 0.5);
   }
-  .card__cover:before {
-    background-color: $daytime-night-bgc2;
-    opacity: .5;
-  }
+
   .btn {
     &:hover,
     &:focus,

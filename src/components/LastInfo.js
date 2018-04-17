@@ -4,12 +4,15 @@ class LastInfo extends Component {
   render() {
     return (
       <div className="card__content">
-        <span className="card__title" title={this.props.title}>
-          {' '}{this.props.title}
-        </span>
-        <span className="card__artist">
-          by {this.props.artist}
-        </span>
+        <a
+          href={this.props.url}
+          className="card__title"
+          title={this.props.title}
+        >
+          {' '}
+          {this.props.title}
+        </a>
+        <span className="card__artist">by {this.props.artist}</span>
       </div>
     );
   }
