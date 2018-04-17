@@ -1,0 +1,28 @@
+/** BASE **/
+
+body {
+font-family: 'Montserrat','Helvetica Neue',Helvetica,sans-serif;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header {
+	border-right:1px solid rgba(255, 255, 255, 0.05);
+	padding: 0 20px;
+	position: relative;
+}
+
+main {
+	flex: 1;
+  position: relative;
+}
+
+.container {
+  margin: 0 auto;
+  font-family: 'Proxima Nova', sans-serif;
+}
