@@ -17,28 +17,44 @@ header {
   position: relative; }
 
 main {
-  flex: 1; }
+  flex: 1;
+  position: relative; }
 
 .container {
   margin: 0 auto;
   font-family: 'Proxima Nova', sans-serif; }
 
 /** BACKGROUNDS **/
+.card__cover:hover {
+  filter: none; }
+
 .morning .glitch:after,
 .morning .glitch:before {
   background-color: #72afd3; }
+
+.morning .card__cover {
+  filter: url("#duotone_morning"); }
 
 .afternoon .glitch:after,
 .afternoon .glitch:before {
   background-color: #4facfe; }
 
+.afternoon .card__cover {
+  filter: url("#duotone_afternoon"); }
+
 .evening .glitch:after,
 .evening .glitch:before {
   background-color: #fee140; }
 
+.evening .card__cover {
+  filter: url("#duotone_evening"); }
+
 .night .glitch:after,
 .night .glitch:before {
   background-color: #d43f8d; }
+
+.night .card__cover {
+  filter: url("#duotone_night"); }
 
 .body_background {
   opacity: 0;
@@ -92,10 +108,6 @@ h1 {
 .card__title, .btn {
   text-shadow: 0 2px 0px #37ecba, 0 0 1px rgba(0, 0, 0, 0.5); }
 
-.card__cover:before {
-  background-color: #72afd3;
-  opacity: .5; }
-
 .btn:hover, .btn:focus, .btn.active {
   background-color: #37ecba; }
 
@@ -110,10 +122,6 @@ h1 {
 
 .morning .card__title, .morning .btn {
   text-shadow: 0 2px 0px #37ecba, 0 0 1px rgba(0, 0, 0, 0.5); }
-
-.morning .card__cover:before {
-  background-color: #084f3c;
-  opacity: .5; }
 
 .morning .btn:hover, .morning .btn:focus, .morning .btn.active {
   background-color: #37ecba; }
@@ -130,10 +138,6 @@ h1 {
 .afternoon .card__title, .afternoon .btn {
   text-shadow: 0 2px 0px #4facfe, 0 0 1px rgba(0, 0, 0, 0.5); }
 
-.afternoon .card__cover:before {
-  background-color: #014580;
-  opacity: .5; }
-
 .afternoon .btn:hover, .afternoon .btn:focus, .afternoon .btn.active {
   background-color: #4facfe; }
 
@@ -149,10 +153,6 @@ h1 {
 .evening .card__title, .evening .btn {
   text-shadow: 0 2px 0px #fee140, 0 0 1px rgba(0, 0, 0, 0.5); }
 
-.evening .card__cover:before {
-  background-color: #360212;
-  opacity: .5; }
-
 .evening .btn:hover, .evening .btn:focus, .evening .btn.active {
   background-color: #fee140; }
 
@@ -167,10 +167,6 @@ h1 {
 
 .night .card__title, .night .btn {
   text-shadow: 0 2px 0px #d43f8d, 0 0 1px rgba(0, 0, 0, 0.5); }
-
-.night .card__cover:before {
-  background-color: #2f1b61;
-  opacity: .5; }
 
 .night .btn:hover, .night .btn:focus, .night .btn.active {
   background-color: #d43f8d; }
@@ -248,14 +244,6 @@ h1 {
     background-color: #332f38;
     transform: scale(1.3);
     position: relative; }
-    .card__cover:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(95, 50, 153, 0.5); }
   .card__content {
     margin-top: 5px;
     text-align: left;
@@ -286,6 +274,7 @@ h1 {
     display: block;
     font-weight: 500;
     color: #fff;
+    text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -361,8 +350,7 @@ h1 {
   -moz-animation: rotating 4s linear infinite;
   -ms-animation: rotating 4s linear infinite;
   -o-animation: rotating 4s linear infinite;
-  animation: rotating 4s linear infinite;
-  transform-origin: center; }
+  animation: rotating 4s linear infinite; }
 
 @-webkit-keyframes rotating {
   from {
